@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "__locale": "cpp",
+        "__string": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "bitset": "cpp",
+        "initializer_list": "cpp",
+        "iterator": "cpp",
+        "memory": "cpp",
+        "utility": "cpp",
+        "__tuple": "cpp",
+        "__bit_reference": "cpp"
+    }
+}
