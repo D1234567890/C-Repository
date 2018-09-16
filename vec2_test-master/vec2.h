@@ -47,4 +47,48 @@ struct vec2 {
             return false;
         }
     }
+
+    void operator+=(vec2 v) {
+        this -> x += v.x;
+        this -> y += v.y;
+    }
+
+    void operator-=(vec2 v) {
+        this -> x += v.x;
+        this -> y += v.y;
+    }
+
+    void operator*=(vec2 v) {
+        this -> x += v.x;
+        this -> y += v.y;
+    }
+
+    void operator/=(vec2 v) {
+        this -> x += v.x;
+        this -> y += v.y;
+    }
+
+    vec2 operator+(vec2 v) {
+        return vec2(this -> x + v.x, this -> y + v.y);
+    }
+
+    vec2 operator-(vec2 v) {
+        return vec2(this -> x - v.x, this -> y - v.y);
+    }
+
+    vec2 operator*(vec2 v) {
+        return vec2(this -> x * v.x, this -> y * v.y);
+
+    vec2 operator/(vec2 v) {
+        return vec2(this -> x / v.x, this -> y / v.y);
+    }
+
+    bool operator==(vec2 v) {
+        return this->equals(v);
+        // if (this -> x == v2.x && this -> y == v2.y) {
+        //     return true;
+        // } else {
+        //     return false;
+        // }
+    }
 };
