@@ -1,4 +1,5 @@
 #include "mat4.h"
+#include "math.h"
 
 float[][] matrix;
 
@@ -96,4 +97,76 @@ mat4 mat4::subtract(mat4 m1, mat4 m2){
     }
 
     return m;
+}
+
+mat4 mat4::rotateX(mat4 m1, double theta){
+    
+    mat4 rotateX = new mat4();
+
+    rotateX[0][0] = 1;
+    rotateX[1][0] = 0;
+    rotateX[2][0] = 0;
+    rotateX[3][0] = 0;
+    rotateX[1][0] = 0;
+    rotateX[1][1] = cos(theta);
+    rotateX[1][2] = (-1) * sin(theta);
+    rotateX[1][3] = 0;
+    rotateX[2][0] = 0;
+    rotateX[2][1] = sin(theta);
+    rotateX[2][2] = cos(theta);
+    rotateX[2][3] = 0;
+    rotateX[3][0] = 0;
+    rotateX[3][1] = 0;
+    rotateX[3][2] = 0;
+    rotateX[3][3] = 1;
+
+    return multiply(rotateX, m1);
+}
+
+mat4 mat4::rotateY(mat4 m1, double theta){
+    
+    mat4 rotateY = new mat4();
+
+    rotateY[0][0] = cos(theta);
+    rotateY[1][0] = 0;
+    rotateY[2][0] = sin(theta);
+    rotateY[3][0] = 0;
+    rotateY[1][0] = 0;
+    rotateY[1][1] = 1;
+    rotateY[1][2] = 0;
+    rotateY[1][3] = 0;
+    rotateY[2][0] = (-1) * sin(theta);
+    rotateY[2][1] = 0;
+    rotateY[2][2] = cos(theta);
+    rotateY[2][3] = 0;
+    rotateY[3][0] = 0;
+    rotateY[3][1] = 0;
+    rotateY[3][2] = 0;
+    rotateY[3][3] = 1;
+
+    return multiply(rotateY, m1);
+}
+
+mat4 mat4::rotateZ(mat4 m1, double theta){
+    
+     mat4 rotateZ = new mat4();
+
+    rotateZ[0][0] = cos(theta);
+    rotateZ[1][0] = (-1) * sin(theta);
+    rotateZ[2][0] = 0;
+    rotateZ[3][0] = 0;
+    rotateZ[1][0] = sin(theta);
+    rotateZ[1][1] = cos(theta);
+    rotateZ[1][2] = 0;
+    rotateZ[2][3] = 0;
+    rotateZ[2][0] = 0;
+    rotateZ[2][1] = 0;
+    rotateZ[2][2] = 1;
+    rotateZ[3][3] = 0;
+    rotateZ[3][0] = 0;
+    rotateZ[3][1] = 0;
+    rotateZ[3][2] = 0;
+    rotateZ[3][3] = 1;
+
+    return multiply(rotateZ, m1);
 }
